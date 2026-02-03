@@ -10,11 +10,6 @@ const path = require("path")
 const app = express()
 app.use(cors())
 app.use(express.json())
-/**
- * http://localhost:3000/assets/index-DLB1m1Wg.js
- * http://localhost:3000/assets/index-ba2-FDEi.css
- * http://localhost:3000/assets/index-DLB1m1Wg-2.js
- */
 app.use(express.static("./public"))
 
 /**
@@ -79,11 +74,8 @@ app.patch('/api/notes/:id', async (req, res) => {
 
 })
 
-console.log(__dirname)
 
-app.use('*name', (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "/public/index.html"))
-})
+
 
 
 module.exports = app
